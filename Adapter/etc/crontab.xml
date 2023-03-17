@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="default">
+		<job instance="Productflow\Adapter\Cron\Datamodel" method="execute" name="productflow_endpoint_cron">
+			<schedule>0 * * * *</schedule>
+		</job>
+	</group>
+	<group id="index">
+		<job instance="Productflow\Adapter\Cron\Clearpayload" method="execute" name="productflow_endpoint_cron_clearpayload">
+				<schedule>0 0 * * 6</schedule>
+		</job>
+    	</group>
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Productflow_Adapter::parent" title="Productflow Job Queue" module="Productflow_Adapter" sortOrder="100" resource="Productflow_Adapter::parent"/>
+        <add id="Productflow_Adapter::index" title="Productflow Job Queue" module="Productflow_Adapter" sortOrder="10" action="productflow/index" resource="Productflow_Adapter::index" parent="Productflow_Adapter::parent"/>
+		
+    </menu>
+</config>

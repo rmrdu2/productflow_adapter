@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/productflow-adapter/:storeId/products/" method="POST">
+		<service class="Productflow\Adapter\Api\ProductsManagementInterface" method="postProducts"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+			<resource ref="Magento_Catalog::products"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/orders/" method="GET">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="getAllOrders"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/orders/page/:page/" method="GET">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="getOrders"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/order/:orderId/" method="GET">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="getOrder"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/orders/:orderId/" method="GET">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="getOrder"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/order/id/:orderId/" method="GET">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="load"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/shipment/" method="POST">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="updateShipment"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+	<route url="/V1/productflow-adapter/:storeId/order-update/" method="POST">
+		<service class="Productflow\Adapter\Api\OrderManagementInterface" method="updateOrderStatus"/>
+		<resources>
+			<resource ref="Productflow_Adapter::parent"/>
+		</resources>
+	</route>
+</routes>
